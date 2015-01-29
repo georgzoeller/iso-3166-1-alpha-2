@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>index.coffee</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>index.coffee</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>mout = <span class="hljs-built_in">require</span> <span class="hljs-string">'mout/object'</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Implements iso 3166-1-alpha-2 lookup</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Iso31661a2</span></span>
+
+    <span class="hljs-attribute">constructor</span>: <span class="hljs-function">-&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Given an iso country code, returns an english country name</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getCountry</span>: <span class="hljs-function"><span class="hljs-params">(code)</span> -&gt;</span>
+        <span class="hljs-attribute">Iso31661a2</span>::countries[code]</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Given an english country name, returns an iso code</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getCode</span>: <span class="hljs-function"><span class="hljs-params">(country)</span> -&gt;</span>
+        ret = <span class="hljs-literal">null</span>
+        <span class="hljs-keyword">if</span> country?
+            ret = Object.keys(<span class="hljs-attribute">Iso31661a2</span>::countries)[idx] <span class="hljs-keyword">if</span> mout.values(<span class="hljs-attribute">Iso31661a2</span>::countries).indexOf(country) != -<span class="hljs-number">1</span>
+        ret</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Returns a list of all english country names</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getCountries</span>: <span class="hljs-function">-&gt;</span>
+        mout.values <span class="hljs-attribute">Iso31661a2</span>::countries</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Returns a list of all iso country codes</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getCodes</span>: <span class="hljs-function">-&gt;</span>
+        Object.keys(<span class="hljs-attribute">Iso31661a2</span>::countries)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Get the internal list of countries and region codes</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getData</span>: <span class="hljs-function">-&gt;</span>
+        <span class="hljs-attribute">Iso31661a2</span>::countries</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>the actual list data</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">Iso31661a2</span>::countries =
+        <span class="hljs-attribute">AF</span>: <span class="hljs-string">"Afghanistan"</span>
+        <span class="hljs-attribute">AX</span>: <span class="hljs-string">"Åland Islands"</span>
+        <span class="hljs-attribute">AL</span>: <span class="hljs-string">"Albania"</span>
+        <span class="hljs-attribute">DZ</span>: <span class="hljs-string">"Algeria"</span>
+        <span class="hljs-attribute">AS</span>: <span class="hljs-string">"American Samoa"</span>
+        <span class="hljs-attribute">AD</span>: <span class="hljs-string">"Andorra"</span>
+        <span class="hljs-attribute">AO</span>: <span class="hljs-string">"Angola"</span>
+        <span class="hljs-attribute">AI</span>: <span class="hljs-string">"Anguilla"</span>
+        <span class="hljs-attribute">AQ</span>: <span class="hljs-string">"Antarctica"</span>
+        <span class="hljs-attribute">AG</span>: <span class="hljs-string">"Antigua and Barbuda"</span>
+        <span class="hljs-attribute">AR</span>: <span class="hljs-string">"Argentina"</span>
+        <span class="hljs-attribute">AM</span>: <span class="hljs-string">"Armenia"</span>
+        <span class="hljs-attribute">AW</span>: <span class="hljs-string">"Aruba"</span>
+        <span class="hljs-attribute">AU</span>: <span class="hljs-string">"Australia"</span>
+        <span class="hljs-attribute">AT</span>: <span class="hljs-string">"Austria"</span>
+        <span class="hljs-attribute">AZ</span>: <span class="hljs-string">"Azerbaijan"</span>
+        <span class="hljs-attribute">BS</span>: <span class="hljs-string">"Bahamas"</span>
+        <span class="hljs-attribute">BH</span>: <span class="hljs-string">"Bahrain"</span>
+        <span class="hljs-attribute">BD</span>: <span class="hljs-string">"Bangladesh"</span>
+        <span class="hljs-attribute">BB</span>: <span class="hljs-string">"Barbados"</span>
+        <span class="hljs-attribute">BY</span>: <span class="hljs-string">"Belarus"</span>
+        <span class="hljs-attribute">BE</span>: <span class="hljs-string">"Belgium"</span>
+        <span class="hljs-attribute">BZ</span>: <span class="hljs-string">"Belize"</span>
+        <span class="hljs-attribute">BJ</span>: <span class="hljs-string">"Benin"</span>
+        <span class="hljs-attribute">BM</span>: <span class="hljs-string">"Bermuda"</span>
+        <span class="hljs-attribute">BT</span>: <span class="hljs-string">"Bhutan"</span>
+        <span class="hljs-attribute">BO</span>: <span class="hljs-string">"Bolivia, Plurinational State of"</span>
+        <span class="hljs-attribute">BQ</span>: <span class="hljs-string">"Bonaire, Sint Eustatius and Saba"</span>
+        <span class="hljs-attribute">BA</span>: <span class="hljs-string">"Bosnia and Herzegovina"</span>
+        <span class="hljs-attribute">BW</span>: <span class="hljs-string">"Botswana"</span>
+        <span class="hljs-attribute">BV</span>: <span class="hljs-string">"Bouvet Island"</span>
+        <span class="hljs-attribute">BR</span>: <span class="hljs-string">"Brazil"</span>
+        <span class="hljs-attribute">IO</span>: <span class="hljs-string">"British Indian Ocean Territory"</span>
+        <span class="hljs-attribute">BN</span>: <span class="hljs-string">"Brunei Darussalam"</span>
+        <span class="hljs-attribute">BG</span>: <span class="hljs-string">"Bulgaria"</span>
+        <span class="hljs-attribute">BF</span>: <span class="hljs-string">"Burkina Faso"</span>
+        <span class="hljs-attribute">BI</span>: <span class="hljs-string">"Burundi"</span>
+        <span class="hljs-attribute">KH</span>: <span class="hljs-string">"Cambodia"</span>
+        <span class="hljs-attribute">CM</span>: <span class="hljs-string">"Cameroon"</span>
+        <span class="hljs-attribute">CA</span>: <span class="hljs-string">"Canada"</span>
+        <span class="hljs-attribute">CV</span>: <span class="hljs-string">"Cape Verde"</span>
+        <span class="hljs-attribute">KY</span>: <span class="hljs-string">"Cayman Islands"</span>
+        <span class="hljs-attribute">CF</span>: <span class="hljs-string">"Central African Republic"</span>
+        <span class="hljs-attribute">TD</span>: <span class="hljs-string">"Chad"</span>
+        <span class="hljs-attribute">CL</span>: <span class="hljs-string">"Chile"</span>
+        <span class="hljs-attribute">CN</span>: <span class="hljs-string">"China"</span>
+        <span class="hljs-attribute">CX</span>: <span class="hljs-string">"Christmas Island"</span>
+        <span class="hljs-attribute">CC</span>: <span class="hljs-string">"Cocos (Keeling) Islands"</span>
+        <span class="hljs-attribute">CO</span>: <span class="hljs-string">"Colombia"</span>
+        <span class="hljs-attribute">KM</span>: <span class="hljs-string">"Comoros"</span>
+        <span class="hljs-attribute">CG</span>: <span class="hljs-string">"Congo"</span>
+        <span class="hljs-attribute">CD</span>: <span class="hljs-string">"Congo, the Democratic Republic of the"</span>
+        <span class="hljs-attribute">CK</span>: <span class="hljs-string">"Cook Islands"</span>
+        <span class="hljs-attribute">CR</span>: <span class="hljs-string">"Costa Rica"</span>
+        <span class="hljs-attribute">CI</span>: <span class="hljs-string">"Côte d'Ivoire"</span>
+        <span class="hljs-attribute">HR</span>: <span class="hljs-string">"Croatia"</span>
+        <span class="hljs-attribute">CU</span>: <span class="hljs-string">"Cuba"</span>
+        <span class="hljs-attribute">CW</span>: <span class="hljs-string">"Curaçao"</span>
+        <span class="hljs-attribute">CY</span>: <span class="hljs-string">"Cyprus"</span>
+        <span class="hljs-attribute">CZ</span>: <span class="hljs-string">"Czech Republic"</span>
+        <span class="hljs-attribute">DK</span>: <span class="hljs-string">"Denmark"</span>
+        <span class="hljs-attribute">DJ</span>: <span class="hljs-string">"Djibouti"</span>
+        <span class="hljs-attribute">DM</span>: <span class="hljs-string">"Dominica"</span>
+        <span class="hljs-attribute">DO</span>: <span class="hljs-string">"Dominican Republic"</span>
+        <span class="hljs-attribute">EC</span>: <span class="hljs-string">"Ecuador"</span>
+        <span class="hljs-attribute">EG</span>: <span class="hljs-string">"Egypt"</span>
+        <span class="hljs-attribute">SV</span>: <span class="hljs-string">"El Salvador"</span>
+        <span class="hljs-attribute">GQ</span>: <span class="hljs-string">"Equatorial Guinea"</span>
+        <span class="hljs-attribute">ER</span>: <span class="hljs-string">"Eritrea"</span>
+        <span class="hljs-attribute">EE</span>: <span class="hljs-string">"Estonia"</span>
+        <span class="hljs-attribute">ET</span>: <span class="hljs-string">"Ethiopia"</span>
+        <span class="hljs-attribute">FK</span>: <span class="hljs-string">"Falkland Islands (Malvinas)"</span>
+        <span class="hljs-attribute">FO</span>: <span class="hljs-string">"Faroe Islands"</span>
+        <span class="hljs-attribute">FJ</span>: <span class="hljs-string">"Fiji"</span>
+        <span class="hljs-attribute">FI</span>: <span class="hljs-string">"Finland"</span>
+        <span class="hljs-attribute">FR</span>: <span class="hljs-string">"France"</span>
+        <span class="hljs-attribute">GF</span>: <span class="hljs-string">"French Guiana"</span>
+        <span class="hljs-attribute">PF</span>: <span class="hljs-string">"French Polynesia"</span>
+        <span class="hljs-attribute">TF</span>: <span class="hljs-string">"French Southern Territories"</span>
+        <span class="hljs-attribute">GA</span>: <span class="hljs-string">"Gabon"</span>
+        <span class="hljs-attribute">GM</span>: <span class="hljs-string">"Gambia"</span>
+        <span class="hljs-attribute">GE</span>: <span class="hljs-string">"Georgia"</span>
+        <span class="hljs-attribute">DE</span>: <span class="hljs-string">"Germany"</span>
+        <span class="hljs-attribute">GH</span>: <span class="hljs-string">"Ghana"</span>
+        <span class="hljs-attribute">GI</span>: <span class="hljs-string">"Gibraltar"</span>
+        <span class="hljs-attribute">GR</span>: <span class="hljs-string">"Greece"</span>
+        <span class="hljs-attribute">GL</span>: <span class="hljs-string">"Greenland"</span>
+        <span class="hljs-attribute">GD</span>: <span class="hljs-string">"Grenada"</span>
+        <span class="hljs-attribute">GP</span>: <span class="hljs-string">"Guadeloupe"</span>
+        <span class="hljs-attribute">GU</span>: <span class="hljs-string">"Guam"</span>
+        <span class="hljs-attribute">GT</span>: <span class="hljs-string">"Guatemala"</span>
+        <span class="hljs-attribute">GG</span>: <span class="hljs-string">"Guernsey"</span>
+        <span class="hljs-attribute">GN</span>: <span class="hljs-string">"Guinea"</span>
+        <span class="hljs-attribute">GW</span>: <span class="hljs-string">"Guinea-Bissau"</span>
+        <span class="hljs-attribute">GY</span>: <span class="hljs-string">"Guyana"</span>
+        <span class="hljs-attribute">HT</span>: <span class="hljs-string">"Haiti"</span>
+        <span class="hljs-attribute">HM</span>: <span class="hljs-string">"Heard Island and McDonald Mcdonald Islands"</span>
+        <span class="hljs-attribute">VA</span>: <span class="hljs-string">"Holy See (Vatican City State)"</span>
+        <span class="hljs-attribute">HN</span>: <span class="hljs-string">"Honduras"</span>
+        <span class="hljs-attribute">HK</span>: <span class="hljs-string">"Hong Kong"</span>
+        <span class="hljs-attribute">HU</span>: <span class="hljs-string">"Hungary"</span>
+        <span class="hljs-attribute">IS</span>: <span class="hljs-string">"Iceland"</span>
+        <span class="hljs-attribute">IN</span>: <span class="hljs-string">"India"</span>
+        <span class="hljs-attribute">ID</span>: <span class="hljs-string">"Indonesia"</span>
+        <span class="hljs-attribute">IR</span>: <span class="hljs-string">"Iran, Islamic Republic of"</span>
+        <span class="hljs-attribute">IQ</span>: <span class="hljs-string">"Iraq"</span>
+        <span class="hljs-attribute">IE</span>: <span class="hljs-string">"Ireland"</span>
+        <span class="hljs-attribute">IM</span>: <span class="hljs-string">"Isle of Man"</span>
+        <span class="hljs-attribute">IL</span>: <span class="hljs-string">"Israel"</span>
+        <span class="hljs-attribute">IT</span>: <span class="hljs-string">"Italy"</span>
+        <span class="hljs-attribute">JM</span>: <span class="hljs-string">"Jamaica"</span>
+        <span class="hljs-attribute">JP</span>: <span class="hljs-string">"Japan"</span>
+        <span class="hljs-attribute">JE</span>: <span class="hljs-string">"Jersey"</span>
+        <span class="hljs-attribute">JO</span>: <span class="hljs-string">"Jordan"</span>
+        <span class="hljs-attribute">KZ</span>: <span class="hljs-string">"Kazakhstan"</span>
+        <span class="hljs-attribute">KE</span>: <span class="hljs-string">"Kenya"</span>
+        <span class="hljs-attribute">KI</span>: <span class="hljs-string">"Kiribati"</span>
+        <span class="hljs-attribute">KP</span>: <span class="hljs-string">"Korea, Democratic People's Republic of"</span>
+        <span class="hljs-attribute">KR</span>: <span class="hljs-string">"Korea, Republic of"</span>
+        <span class="hljs-attribute">KW</span>: <span class="hljs-string">"Kuwait"</span>
+        <span class="hljs-attribute">KG</span>: <span class="hljs-string">"Kyrgyzstan"</span>
+        <span class="hljs-attribute">LA</span>: <span class="hljs-string">"Lao People's Democratic Republic"</span>
+        <span class="hljs-attribute">LV</span>: <span class="hljs-string">"Latvia"</span>
+        <span class="hljs-attribute">LB</span>: <span class="hljs-string">"Lebanon"</span>
+        <span class="hljs-attribute">LS</span>: <span class="hljs-string">"Lesotho"</span>
+        <span class="hljs-attribute">LR</span>: <span class="hljs-string">"Liberia"</span>
+        <span class="hljs-attribute">LY</span>: <span class="hljs-string">"Libya"</span>
+        <span class="hljs-attribute">LI</span>: <span class="hljs-string">"Liechtenstein"</span>
+        <span class="hljs-attribute">LT</span>: <span class="hljs-string">"Lithuania"</span>
+        <span class="hljs-attribute">LU</span>: <span class="hljs-string">"Luxembourg"</span>
+        <span class="hljs-attribute">MO</span>: <span class="hljs-string">"Macao"</span>
+        <span class="hljs-attribute">MK</span>: <span class="hljs-string">"Macedonia, the Former Yugoslav Republic of"</span>
+        <span class="hljs-attribute">MG</span>: <span class="hljs-string">"Madagascar"</span>
+        <span class="hljs-attribute">MW</span>: <span class="hljs-string">"Malawi"</span>
+        <span class="hljs-attribute">MY</span>: <span class="hljs-string">"Malaysia"</span>
+        <span class="hljs-attribute">MV</span>: <span class="hljs-string">"Maldives"</span>
+        <span class="hljs-attribute">ML</span>: <span class="hljs-string">"Mali"</span>
+        <span class="hljs-attribute">MT</span>: <span class="hljs-string">"Malta"</span>
+        <span class="hljs-attribute">MH</span>: <span class="hljs-string">"Marshall Islands"</span>
+        <span class="hljs-attribute">MQ</span>: <span class="hljs-string">"Martinique"</span>
+        <span class="hljs-attribute">MR</span>: <span class="hljs-string">"Mauritania"</span>
+        <span class="hljs-attribute">MU</span>: <span class="hljs-string">"Mauritius"</span>
+        <span class="hljs-attribute">YT</span>: <span class="hljs-string">"Mayotte"</span>
+        <span class="hljs-attribute">MX</span>: <span class="hljs-string">"Mexico"</span>
+        <span class="hljs-attribute">FM</span>: <span class="hljs-string">"Micronesia, Federated States of"</span>
+        <span class="hljs-attribute">MD</span>: <span class="hljs-string">"Moldova, Republic of"</span>
+        <span class="hljs-attribute">MC</span>: <span class="hljs-string">"Monaco"</span>
+        <span class="hljs-attribute">MN</span>: <span class="hljs-string">"Mongolia"</span>
+        <span class="hljs-attribute">ME</span>: <span class="hljs-string">"Montenegro"</span>
+        <span class="hljs-attribute">MS</span>: <span class="hljs-string">"Montserrat"</span>
+        <span class="hljs-attribute">MA</span>: <span class="hljs-string">"Morocco"</span>
+        <span class="hljs-attribute">MZ</span>: <span class="hljs-string">"Mozambique"</span>
+        <span class="hljs-attribute">MM</span>: <span class="hljs-string">"Myanmar"</span>
+        <span class="hljs-attribute">NA</span>: <span class="hljs-string">"Namibia"</span>
+        <span class="hljs-attribute">NR</span>: <span class="hljs-string">"Nauru"</span>
+        <span class="hljs-attribute">NP</span>: <span class="hljs-string">"Nepal"</span>
+        <span class="hljs-attribute">NL</span>: <span class="hljs-string">"Netherlands"</span>
+        <span class="hljs-attribute">NC</span>: <span class="hljs-string">"New Caledonia"</span>
+        <span class="hljs-attribute">NZ</span>: <span class="hljs-string">"New Zealand"</span>
+        <span class="hljs-attribute">NI</span>: <span class="hljs-string">"Nicaragua"</span>
+        <span class="hljs-attribute">NE</span>: <span class="hljs-string">"Niger"</span>
+        <span class="hljs-attribute">NG</span>: <span class="hljs-string">"Nigeria"</span>
+        <span class="hljs-attribute">NU</span>: <span class="hljs-string">"Niue"</span>
+        <span class="hljs-attribute">NF</span>: <span class="hljs-string">"Norfolk Island"</span>
+        <span class="hljs-attribute">MP</span>: <span class="hljs-string">"Northern Mariana Islands"</span>
+        <span class="hljs-attribute">NO</span>: <span class="hljs-string">"Norway"</span>
+        <span class="hljs-attribute">OM</span>: <span class="hljs-string">"Oman"</span>
+        <span class="hljs-attribute">PK</span>: <span class="hljs-string">"Pakistan"</span>
+        <span class="hljs-attribute">PW</span>: <span class="hljs-string">"Palau"</span>
+        <span class="hljs-attribute">PS</span>: <span class="hljs-string">"Palestine, State of"</span>
+        <span class="hljs-attribute">PA</span>: <span class="hljs-string">"Panama"</span>
+        <span class="hljs-attribute">PG</span>: <span class="hljs-string">"Papua New Guinea"</span>
+        <span class="hljs-attribute">PY</span>: <span class="hljs-string">"Paraguay"</span>
+        <span class="hljs-attribute">PE</span>: <span class="hljs-string">"Peru"</span>
+        <span class="hljs-attribute">PH</span>: <span class="hljs-string">"Philippines"</span>
+        <span class="hljs-attribute">PN</span>: <span class="hljs-string">"Pitcairn"</span>
+        <span class="hljs-attribute">PL</span>: <span class="hljs-string">"Poland"</span>
+        <span class="hljs-attribute">PT</span>: <span class="hljs-string">"Portugal"</span>
+        <span class="hljs-attribute">PR</span>: <span class="hljs-string">"Puerto Rico"</span>
+        <span class="hljs-attribute">QA</span>: <span class="hljs-string">"Qatar"</span>
+        <span class="hljs-attribute">RE</span>: <span class="hljs-string">"Réunion"</span>
+        <span class="hljs-attribute">RO</span>: <span class="hljs-string">"Romania"</span>
+        <span class="hljs-attribute">RU</span>: <span class="hljs-string">"Russian Federation"</span>
+        <span class="hljs-attribute">RW</span>: <span class="hljs-string">"Rwanda"</span>
+        <span class="hljs-attribute">BL</span>: <span class="hljs-string">"Saint Barthélemy"</span>
+        <span class="hljs-attribute">SH</span>: <span class="hljs-string">"Saint Helena, Ascension and Tristan da Cunha"</span>
+        <span class="hljs-attribute">KN</span>: <span class="hljs-string">"Saint Kitts and Nevis"</span>
+        <span class="hljs-attribute">LC</span>: <span class="hljs-string">"Saint Lucia"</span>
+        <span class="hljs-attribute">MF</span>: <span class="hljs-string">"Saint Martin (French part)"</span>
+        <span class="hljs-attribute">PM</span>: <span class="hljs-string">"Saint Pierre and Miquelon"</span>
+        <span class="hljs-attribute">VC</span>: <span class="hljs-string">"Saint Vincent and the Grenadines"</span>
+        <span class="hljs-attribute">WS</span>: <span class="hljs-string">"Samoa"</span>
+        <span class="hljs-attribute">SM</span>: <span class="hljs-string">"San Marino"</span>
+        <span class="hljs-attribute">ST</span>: <span class="hljs-string">"Sao Tome and Principe"</span>
+        <span class="hljs-attribute">SA</span>: <span class="hljs-string">"Saudi Arabia"</span>
+        <span class="hljs-attribute">SN</span>: <span class="hljs-string">"Senegal"</span>
+        <span class="hljs-attribute">RS</span>: <span class="hljs-string">"Serbia"</span>
+        <span class="hljs-attribute">SC</span>: <span class="hljs-string">"Seychelles"</span>
+        <span class="hljs-attribute">SL</span>: <span class="hljs-string">"Sierra Leone"</span>
+        <span class="hljs-attribute">SG</span>: <span class="hljs-string">"Singapore"</span>
+        <span class="hljs-attribute">SX</span>: <span class="hljs-string">"Sint Maarten (Dutch part)"</span>
+        <span class="hljs-attribute">SK</span>: <span class="hljs-string">"Slovakia"</span>
+        <span class="hljs-attribute">SI</span>: <span class="hljs-string">"Slovenia"</span>
+        <span class="hljs-attribute">SB</span>: <span class="hljs-string">"Solomon Islands"</span>
+        <span class="hljs-attribute">SO</span>: <span class="hljs-string">"Somalia"</span>
+        <span class="hljs-attribute">ZA</span>: <span class="hljs-string">"South Africa"</span>
+        <span class="hljs-attribute">GS</span>: <span class="hljs-string">"South Georgia and the South Sandwich Islands"</span>
+        <span class="hljs-attribute">SS</span>: <span class="hljs-string">"South Sudan"</span>
+        <span class="hljs-attribute">ES</span>: <span class="hljs-string">"Spain"</span>
+        <span class="hljs-attribute">LK</span>: <span class="hljs-string">"Sri Lanka"</span>
+        <span class="hljs-attribute">SD</span>: <span class="hljs-string">"Sudan"</span>
+        <span class="hljs-attribute">SR</span>: <span class="hljs-string">"Suriname"</span>
+        <span class="hljs-attribute">SJ</span>: <span class="hljs-string">"Svalbard and Jan Mayen"</span>
+        <span class="hljs-attribute">SZ</span>: <span class="hljs-string">"Swaziland"</span>
+        <span class="hljs-attribute">SE</span>: <span class="hljs-string">"Sweden"</span>
+        <span class="hljs-attribute">CH</span>: <span class="hljs-string">"Switzerland"</span>
+        <span class="hljs-attribute">SY</span>: <span class="hljs-string">"Syrian Arab Republic"</span>
+        <span class="hljs-attribute">TW</span>: <span class="hljs-string">"Taiwan, Province of China"</span>
+        <span class="hljs-attribute">TJ</span>: <span class="hljs-string">"Tajikistan"</span>
+        <span class="hljs-attribute">TZ</span>: <span class="hljs-string">"Tanzania, United Republic of"</span>
+        <span class="hljs-attribute">TH</span>: <span class="hljs-string">"Thailand"</span>
+        <span class="hljs-attribute">TL</span>: <span class="hljs-string">"Timor-Leste"</span>
+        <span class="hljs-attribute">TG</span>: <span class="hljs-string">"Togo"</span>
+        <span class="hljs-attribute">TK</span>: <span class="hljs-string">"Tokelau"</span>
+        <span class="hljs-attribute">TO</span>: <span class="hljs-string">"Tonga"</span>
+        <span class="hljs-attribute">TT</span>: <span class="hljs-string">"Trinidad and Tobago"</span>
+        <span class="hljs-attribute">TN</span>: <span class="hljs-string">"Tunisia"</span>
+        <span class="hljs-attribute">TR</span>: <span class="hljs-string">"Turkey"</span>
+        <span class="hljs-attribute">TM</span>: <span class="hljs-string">"Turkmenistan"</span>
+        <span class="hljs-attribute">TC</span>: <span class="hljs-string">"Turks and Caicos Islands"</span>
+        <span class="hljs-attribute">TV</span>: <span class="hljs-string">"Tuvalu"</span>
+        <span class="hljs-attribute">UG</span>: <span class="hljs-string">"Uganda"</span>
+        <span class="hljs-attribute">UA</span>: <span class="hljs-string">"Ukraine"</span>
+        <span class="hljs-attribute">AE</span>: <span class="hljs-string">"United Arab Emirates"</span>
+        <span class="hljs-attribute">GB</span>: <span class="hljs-string">"United Kingdom"</span>
+        <span class="hljs-attribute">US</span>: <span class="hljs-string">"United States"</span>
+        <span class="hljs-attribute">UM</span>: <span class="hljs-string">"United States Minor Outlying Islands"</span>
+        <span class="hljs-attribute">UY</span>: <span class="hljs-string">"Uruguay"</span>
+        <span class="hljs-attribute">UZ</span>: <span class="hljs-string">"Uzbekistan"</span>
+        <span class="hljs-attribute">VU</span>: <span class="hljs-string">"Vanuatu"</span>
+        <span class="hljs-attribute">VE</span>: <span class="hljs-string">"Venezuela, Bolivarian Republic of"</span>
+        <span class="hljs-attribute">VN</span>: <span class="hljs-string">"Viet Nam"</span>
+        <span class="hljs-attribute">VG</span>: <span class="hljs-string">"Virgin Islands, British"</span>
+        <span class="hljs-attribute">VI</span>: <span class="hljs-string">"Virgin Islands, U.S."</span>
+        <span class="hljs-attribute">WF</span>: <span class="hljs-string">"Wallis and Futuna"</span>
+        <span class="hljs-attribute">EH</span>: <span class="hljs-string">"Western Sahara"</span>
+        <span class="hljs-attribute">YE</span>: <span class="hljs-string">"Yemen"</span>
+        <span class="hljs-attribute">ZM</span>: <span class="hljs-string">"Zambia"</span>
+        <span class="hljs-attribute">ZW</span>: <span class="hljs-string">"Zimbabwe"</span>
+
+singleton = <span class="hljs-literal">null</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>returns a singleton</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">module</span>.exports = <span class="hljs-function">-&gt;</span>
+    singleton ?= <span class="hljs-keyword">new</span> Iso31661a2()</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
