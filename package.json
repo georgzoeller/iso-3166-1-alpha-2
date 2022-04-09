@@ -17,11 +17,10 @@
   "author": "Georg Zoeller",
   "license": "MIT",
   "dependencies": {
-    "mout": "^0.11.0"
+    "mout": "^1.2.3"
   },
   "homepage": "https://github.com/georgzoeller/iso-3166-1-alpha-2",
-  "bugs":
-  {
+  "bugs": {
     "url": "https://github.com/georgzoeller/iso-3166-1-alpha-2/issues"
   },
   "repository": {
