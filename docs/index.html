@@ -10,141 +10,141 @@
 <body>
   <div id="container">
     <div id="background"></div>
-    
+
     <ul class="sections">
-        
+
           <li id="title">
               <div class="annotation">
                   <h1>index.coffee</h1>
               </div>
           </li>
-        
-        
-        
+
+
+
         <li id="section-1">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>mout = <span class="hljs-built_in">require</span> <span class="hljs-string">'mout/object'</span></pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-2">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
               <p>Implements iso 3166-1-alpha-2 lookup</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Iso31661a2</span></span>
 
     <span class="hljs-attribute">constructor</span>: <span class="hljs-function">-&gt;</span></pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-3">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
               <p>Given an iso country code, returns an english country name</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getCountry</span>: <span class="hljs-function"><span class="hljs-params">(code)</span> -&gt;</span>
         <span class="hljs-attribute">Iso31661a2</span>::countries[code]</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-4">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>Given an english country name, returns an iso code</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getCode</span>: <span class="hljs-function"><span class="hljs-params">(country)</span> -&gt;</span>
         ret = <span class="hljs-literal">null</span>
         <span class="hljs-keyword">if</span> country?
             ret = Object.keys(<span class="hljs-attribute">Iso31661a2</span>::countries)[idx] <span class="hljs-keyword">if</span> mout.values(<span class="hljs-attribute">Iso31661a2</span>::countries).indexOf(country) != -<span class="hljs-number">1</span>
         ret</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-5">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>Returns a list of all english country names</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getCountries</span>: <span class="hljs-function">-&gt;</span>
         mout.values <span class="hljs-attribute">Iso31661a2</span>::countries</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-6">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>Returns a list of all iso country codes</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getCodes</span>: <span class="hljs-function">-&gt;</span>
         Object.keys(<span class="hljs-attribute">Iso31661a2</span>::countries)</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-7">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>Get the internal list of countries and region codes</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">getData</span>: <span class="hljs-function">-&gt;</span>
         <span class="hljs-attribute">Iso31661a2</span>::countries</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-8">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <p>the actual list data</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-attribute">Iso31661a2</span>::countries =
         <span class="hljs-attribute">AF</span>: <span class="hljs-string">"Afghanistan"</span>
         <span class="hljs-attribute">AX</span>: <span class="hljs-string">"Åland Islands"</span>
@@ -363,7 +363,7 @@
         <span class="hljs-attribute">SE</span>: <span class="hljs-string">"Sweden"</span>
         <span class="hljs-attribute">CH</span>: <span class="hljs-string">"Switzerland"</span>
         <span class="hljs-attribute">SY</span>: <span class="hljs-string">"Syrian Arab Republic"</span>
-        <span class="hljs-attribute">TW</span>: <span class="hljs-string">"Taiwan, Province of China"</span>
+        <span class="hljs-attribute">TW</span>: <span class="hljs-string">"Taiwan"</span>
         <span class="hljs-attribute">TJ</span>: <span class="hljs-string">"Tajikistan"</span>
         <span class="hljs-attribute">TZ</span>: <span class="hljs-string">"Tanzania, United Republic of"</span>
         <span class="hljs-attribute">TH</span>: <span class="hljs-string">"Thailand"</span>
@@ -397,25 +397,25 @@
         <span class="hljs-attribute">ZW</span>: <span class="hljs-string">"Zimbabwe"</span>
 
 singleton = <span class="hljs-literal">null</span></pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-9">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
               <p>returns a singleton</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre><span class="hljs-built_in">module</span>.exports = <span class="hljs-function">-&gt;</span>
     singleton ?= <span class="hljs-keyword">new</span> Iso31661a2()</pre></div></div>
-            
+
         </li>
-        
+
     </ul>
   </div>
 </body>
