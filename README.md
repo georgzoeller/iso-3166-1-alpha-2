@@ -1,10 +1,11 @@
 #Iso-3155-1-alpha-2  [![](https://travis-ci.org/georgzoeller/iso-3166-1-alpha-2.svg?branch=master)](https://travis-ci.org/georgzoeller/iso-3166-1-alpha-2) [![](https://img.shields.io/npm/v/iso-3166-1-alpha-2.svg?style=flat)](https://www.npmjs.com/package/iso-3166-1-alpha-2)
 
-
 Simple lookup interface for iso country codes to countries and reverse.
 
-
-The only dependency is mout, so this module works both in node and in the browser(ify).
+Notes
+- This package mirros an ISO spec and is used by a large number of packages who implement it expecting ISO adherence. Please direct requests for changes to country names or codes to the International Standards Organisation.
+- This package is maintained but feature frozen, no new features will be added. Only changes to the ISO spec will be implemented.
+- This package works browser and server side. The only dependency is mout.
 
 ## Installation
 
