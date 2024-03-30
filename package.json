@@ -1,6 +1,6 @@
 {
   "name": "iso-3166-1-alpha-2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple module providing ISO-3166-1-alpha-2 country code to english country name lookup and reverse lookup",
   "main": "index.js",
   "scripts": {
